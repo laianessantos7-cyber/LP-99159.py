@@ -32,7 +32,7 @@ elif operador == "-":
 elif operador == "*":
     result == num1 * num2
 elif operador == "/":
-    result   == num1/num2 
+    result == num1/num2 
 
 if num2 !=0:
     resultado = num1/num2
