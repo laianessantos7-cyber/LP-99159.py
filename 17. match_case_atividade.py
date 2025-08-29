@@ -6,18 +6,20 @@ os.system("cls")
 dia= input("Digite um dia da semana: ")
 
 match dia:
-    case "segunda":
+    case "1":
+        print("Hoje é Domingo.")
+    case "2":
         print("Hoje é segunda-feira.")
-    case "terça":
+    case "3":
         print("Hoje é terça-feira.")
-    case "quarta":
+    case "4":
       print("Hoje é quarta-feira.")
-    case "quinta":
+    case "5":
         print("Hoje é quinta-feira.")
-    case "sexta":
+    case "6":
         print("Hoje é sexta-feira.")
-    case"sabádo" | "domingo":
-        print("Hoje é fim de semana!")
+    case"sabádo":
+        print("Hoje é sabádo.")
     case _:
          print("Dia inválido!")
 
