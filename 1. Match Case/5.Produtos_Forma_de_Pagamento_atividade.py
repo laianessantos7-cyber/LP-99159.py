@@ -6,17 +6,18 @@ import os
 os.system("cls")
 
 
-
+print("===== ÁREA DE PAGAMENTO. ====")
 produto= float(input("Digite o valor do produto: "))
 print("""
-1- Pagamento a vista
-2- Pagamento a prazo
+1- Pagamento a vista.
+2- Pagamento a prazo.
 """)
-forma=int(input("Escolha a forma de pagamento( 1 ou 2): "))
+forma=int(input("Escolha a forma de pagamento (1 ou 2): "))
 
 
 match forma:
      case 1:
+#Obtendo  o valor do desconto de 10%.
         desconto= produto* 0.10
         form_pagamento= 'valor a vista'
         valor_total= produto - desconto
@@ -28,13 +29,8 @@ match forma:
 
      case 2:
          parcelas = int(input("Digite a quantidade de parcelas (até 6): "))
-         parcelas = 6
          valor = produto /6
-         pagamento= "valor a prazo"
-         if parcelas >6 or parcelas <1:
-             print("Número de parcelas inválidos.")
-         else: 
-            print("Número de parcelas inválido. Usando 6 parcelas.")
+         if parcelas >=1 and parcelas <=6:
             parcelas = 6
             valor_parcela = produto / parcelas
             pagamento = "à prazo"
@@ -43,6 +39,9 @@ match forma:
             print(f"Número de parcelas: {parcelas}")
             print(f"Valor de cada parcela: R$ {valor_parcela:.2f}")
             print(f"Valor total: R$ {produto:.2f}")
+         else: 
+            print("Número de parcelas inválido.")
+            
 
 
      
