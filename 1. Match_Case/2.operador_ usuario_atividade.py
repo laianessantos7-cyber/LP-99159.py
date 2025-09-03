@@ -1,4 +1,6 @@
 #Limpar terminal.
+
+#Atividade 2- 29/08/2025
 import os
 os.system("cls")
 

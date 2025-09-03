@@ -1,4 +1,6 @@
-#Atividade 04- 22/08/2025
+
+#Atividade 05- 22/08/2025
+
 #Limpar terminal.
 import os
 os.system("cls")
@@ -23,11 +25,6 @@ else:
     print("A soma é maior que o produto.")
     maior=n1
     menor=n2
-
-print("")   
-if n1 == n2:
-    print("O usuário digitou números iguais.")
-    
  
 print(f"Soma: {soma}") 
 print(f"Produto: {produto}")  
