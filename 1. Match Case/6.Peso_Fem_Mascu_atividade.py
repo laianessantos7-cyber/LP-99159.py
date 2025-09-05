@@ -10,11 +10,13 @@ altura=float(input("Digite sua altura: "))
 genero=input("Digite seu genêro: ")
 
  
-match altura:
+match genero:
     case 'M':
-         genero(72.7 * altura - 58)
-         print (f"Masculino: {genero}")
+         genero = (72.7 * altura ) - 58
+         print (f"Masculino:{genero: .2f}")
     case 'F':
-         genero (62.1 * altura - 44.7)
-         print(f"Feminino: {genero}")
+         genero = (62.1 * altura )- 44.7
+         print(f"Feminino:{genero: .2f}")
+    
     case _: "Inválido."
+     
