@@ -8,12 +8,13 @@ soma=0
 
 for i in range(QUANTIDADE_NOTAS):
     while True:
-        n1=int(input(f"Digite a {i+1}º nota: "))
-        if n1 >=0 and n1 <=10:
-         break
+        n1 = float(input(f"Digite a {i+1}ª nota: "))
+        if n1 < 0 or n1 > 10:
+            print('❌ Nota inválida! Digite novamente.')
+        else:
+            soma += n1
+            break  
 
-soma= soma+n1
-media=(n1+n1)/QUANTIDADE_NOTAS
+media = soma / QUANTIDADE_NOTAS
 
-print(f"Nota: {media}")
-print('FIM')
+print(f"\nMédia final: {media:.2f}")
