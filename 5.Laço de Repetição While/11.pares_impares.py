@@ -7,8 +7,8 @@
 import os
 os.system('cls')
 
-quantidade_pares = 0
-quantidade_impares = 0
+pares = 0
+impares = 0
 soma_pares = 0
 soma_total = 0
 contador_total = 0
@@ -30,8 +30,11 @@ while True:
         quantidade_impares +=1
 
 
-media_total = soma_total / contador_total if contador_total > 0 else 0
-media_pares = soma_pares / quantidade_pares if quantidade_pares > 0 else 0
+media_total = soma_total / contador_total if contador_total !=0 else 0
+media_pares = soma_pares / pares if pares !=0 else 0 
+
+#Operaçâo ternária
+#media_pares=soma_total/ pares if pares != 0 else 0
 
 
 print("\n===== RESULTADOS =====")
