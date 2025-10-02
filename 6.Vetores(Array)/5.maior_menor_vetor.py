@@ -1,9 +1,14 @@
 import os
 os.system('cls')
 
+#Crie um programa que leia 5 números, armazenando em um vetor e informe qual é o menor número e o maior.
+#Mostre os números informados pelo usuário.
+
+
+
 
 # Criando um vetor (lista).
-listas_num=[]
+listas=[]
 
 
 #Constante.
@@ -12,14 +17,15 @@ listas_num=[]
 for i in range(5):
 
     n1=int(input(f'Digite o {i+1}ª número : '))
-    listas_num.append(n1)
+    listas.append(n1)
     
-
+print('')
 print('===RESULTADO====')
-for i in range(5):
+print('')
+for i in range(1):
     
-    print(f'Maior: {max(listas_num)}')
-    print(f"Menor: {min(listas_num)}")
+    print(f'Maior: {max(listas)}')
+    print(f"Menor: {min(listas)}")
 
 
 
