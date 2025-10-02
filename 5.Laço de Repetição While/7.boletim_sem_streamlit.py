@@ -17,7 +17,7 @@ for i in range(1, 4):
             nota = float(input(f"Digite a nota {i} (0 a 10): "))
             if 0 <= nota <= 10:
                 notas.append(nota)
-                break  #
+                break  
             else:
                 print("Nota inválida! Digite um valor entre 0 e 10.")
         except ValueError:

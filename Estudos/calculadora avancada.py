@@ -22,12 +22,12 @@ operador= input ("Digite operação desejada: ")
 #Se for raiz quadrado só precisa de 1 número.
 
 if operador== "sqrt":
-float(input("Digite o número: "))
-resultado = math.sqrt(num)
+        float(input("Digite o número: "))
+resultado = math.sqrt(sum)
 
-else:
-float(input("Digite o primeiro número: "))
-float(input("Digite o segundo número: "))
+
+num1=float(input("Digite o primeiro número: "))
+num2=float(input("Digite o segundo número: "))
 
 if operador == "+":
         resultado = num1 + num2
@@ -39,13 +39,13 @@ elif operador == "/":
         if num2 != 0:
             resultado = num1 / num
             
-            else:
+        else:
             resultado = "Erro! Divisão por zero."
-    elif operador == "%":
+elif operador == "%":
         resultado = num1 % num2
-    elif operador == "^":
+elif operador == "^":
         resultado = num1 ** num2
-    else:
+else:
         resultado = "Operador inválido!"
 
 print("Resultado:", resultado)
