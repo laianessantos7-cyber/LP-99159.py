@@ -12,20 +12,25 @@ listas=[]
 
 
 #Constante.
+QUANTIDADE_NUMEROS=2
 
 #Inserindo notas:
 for i in range(5):
 
-    n1=int(input(f'Digite o {i+1}ª número : '))
+    n1=float(input('Digite um número:'))
     listas.append(n1)
-    
+
+menor=min(listas)
+maior=max(listas)  
 print('')
 print('===RESULTADO====')
 print('')
-for i in range(1):
-    
-    print(f'Maior: {max(listas)}')
-    print(f"Menor: {min(listas)}")
+
+for i in range(QUANTIDADE_NUMEROS):
+    print(f'Número: {listas[i]}')
+
+print(f'Maior número: {menor}')
+print(f"Menor número: {menor}")
 
 
 
