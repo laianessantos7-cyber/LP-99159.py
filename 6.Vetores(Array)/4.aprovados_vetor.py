@@ -1,6 +1,8 @@
 import os
 os.system('cls')
 
+
+
 #Crie um programa que leia 4 notas, armazenando em um vetor e calcule a média aritmética.
 # Verifique a situação do aluno considerando:
 # 	- Média maior ou igual a 7: Aprovado.
@@ -17,9 +19,15 @@ listas_notas=[]
 #Constante.
 QUANTIDADE_NOTAS=4
 
+#Variaveis opcionais:
+print("====BOLETIM====")
+nome=input('Digite seu nome: ')
+idade=float(input('Digite sua idade: '))
+turma=float(input('Digite sua turma: '))
+
+
 #Inserindo notas:
 for i in range(QUANTIDADE_NOTAS):
-
     nota=int(input(f'Digite a {i+1}ª nota: '))
     listas_notas.append(nota)
     
@@ -27,8 +35,8 @@ media=sum(listas_notas) / QUANTIDADE_NOTAS
 
 
 #Mostrar notas:
-print("====BOLETIM====")
-for i in range(3):
+
+for i in range(4):
     print(f'Nota:{listas_notas[i]} ')
 
 print(f'Média: {media}')

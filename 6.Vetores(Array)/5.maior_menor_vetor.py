@@ -7,38 +7,30 @@ os.system('cls')
 
 
 
-# Criando um vetor (lista).
-listas=[]
+# Criando um vetor (lista)
+numeros = []
 
 
-#Constante.
-QUANTIDADE_NUMEROS=2
 
-#Inserindo notas:
+# Lendo os números
 for i in range(5):
+    n = float(input(f'Digite o {i+1}º número: '))
+    numeros.append(n)
 
-    n1=float(input('Digite um número:'))
-    listas.append(n1)
+# Encontrando o menor e o maior número
+menor = min(numeros)
+maior = max(numeros)
 
-menor=min(listas)
-maior=max(listas)  
-print('')
-print('===RESULTADO====')
-print('')
+# os resultados
+print('\n=== RESULTADO ===\n')
+print('Números informados:')
+for num in numeros:
+    print(f'Número: {num}')
 
-for i in range(QUANTIDADE_NUMEROS):
-    print(f'Número: {listas[i]}')
+print(f'\nMaior número: {maior}')
+print(f'Menor número: {menor}')
 
-print(f'Maior número: {menor}')
-print(f"Menor número: {menor}")
-
-
-
-print('FIM')
-
-
-
-
+print('\nFIM')
       
 
 
