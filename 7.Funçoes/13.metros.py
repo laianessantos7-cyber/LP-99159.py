@@ -12,8 +12,7 @@ def limpa_tela():
 
 # Função com parâmetros e com retorno.
 def calclular(n1):
-    metros=(n1 * 100)
-    return metros    
+    return n1 * 100
 
 def mostrar_resultado(centimetros):
     print(f"Centimetros: {centimetros}")
