@@ -1,7 +1,7 @@
 import os
 os.system('cls')
 
-# Faça uma função que recebe um valor inteiro e verifica se o valor é positivo ou negativo.
+#Faça uma função que recebe um valor inteiro e verifica se o valor é positivo ou negativo.
 
 
 def negativo_positivo(numero):
