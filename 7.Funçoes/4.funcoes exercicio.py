@@ -1,6 +1,7 @@
 import os
 os.system('cls')
 
+
 #Função com passagem de parâmetros.
 #Criando uma Função.
 #- Função: 

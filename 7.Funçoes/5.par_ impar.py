@@ -2,6 +2,10 @@ import os
 os.system('cls')
 
 
+# Crie uma função  que receba um número e mostre uma
+# mensagem informando se o número é par ou ímpar.
+
+
 
 def par_impar(numero):
     
