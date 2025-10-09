@@ -8,27 +8,30 @@ os.system('cls')
 # em 20% se ele for maior ou igual a 100.
 # Utilize uma função com retorno para obter o resultado solicitado.
 
+
 def limpa_tela():
-    time.sleep(1) # Espera 1 segundos.
-    os.system("cls")
+    time.sleep(1) #Esperar 1 segundo
+    os.system("cls" if os.name == "nt" else "clear")
 
 
-
-def produto(preco, preco_infla):
+# Função com parâmetros e com retorno.
+def inflacionar_preco(preco):
     if preco >= 100:
-        preco_infla=preco+(preco * 0.20)
-        return preco_infla
+        return preco + (preco * 0.20)
     else:
-        preco_infla=preco+(preco*  0.10)
+        return preco + (preco * 0.10)
 
+print("===== ÁREA DE PAGAMENTO. ====")
 
-def mostrar_resultado(produto):
-      
-    print(f"Valor do produto: R$ {produto:.2f}")
-    print(f"Valor total: R$ {produto:.2f}")
+def mostrar_resultado(preco_original, preco_final):
+    print(f"Valor original do produto: R$ {preco_original:.2f}")
+    print(f"Valor após inflação: R$ {preco_final:.2f}")
 
-produto=float(input('Digite o valor de um produto: '))
-
+# Codigo principal
+limpa_tela()  # Chamando a função.
+preco = float(input('Digite o valor de um produto: R$ '))
+preco_final = inflacionar_preco(preco)
+mostrar_resultado(preco, preco_final)
 
 
 
