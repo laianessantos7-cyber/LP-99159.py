@@ -10,31 +10,29 @@ class Pessoa:
     endereco: str
 
     def mostrar_dados(self):
-        print("\n = Dados = ")
+        print("\n = Todos os Dados = ")
         print(f"Nome: {self.nome}")
         print(f"E-mail: {self.email}")
         print(f'Endereço: {self.endereco}')
    
     def mostrar_somente_nome(self):
-        print("\n = Somente nome = ")
         print(f"Nome: {self.nome}")
         
 
 
-print("Solicitando os dados da primeira pessoa.")
-pessoa1 = Pessoa(nome=input("Digite seu nome: "),
+print("Solicitando os dados da pessoa.")
+lista_pessoas=[]
+for i in range (2):
+    pessoa = Pessoa(nome=input("Digite seu nome: "),
                  email=input('Digite seu E-mail: '),
                  endereco=input("Digite seu endereço: "))
+    lista_pessoas.append(pessoa)
 print(' ')
-print("Solicitando os dados da segunda pessoa.")
-pessoa2 = Pessoa(nome=input("Digite seu nome: "),
-                 email=input('Digite seu E-mail: '),
-                 endereco=input("Digite seu endereço: "))
-
 
 os.system('cls')
 print("\n = Exibindo Dados =")
-pessoa1.mostrar_dados()
-pessoa1.mostrar_somente_nome()
-pessoa2.mostrar_dados()
-pessoa2.mostrar_somente_nome()
+for pessoa in lista_pessoas:
+    pessoa.mostrar_dados()
+print("\n = Somente nome = ")
+for pessoa in lista_pessoas:
+    pessoa.mostrar_somente_nome()
