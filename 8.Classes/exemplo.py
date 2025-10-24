@@ -1,4 +1,3 @@
-# EXEMPLO: 
 
 from dataclasses import dataclass
 # Estrutura de dados : classe.
