@@ -19,6 +19,7 @@ class Pessoa:
         print(' = Mostrar dados das pessoas = ')
         print(f'Nome: {self.nome} \n' )
         print(f'E-mail:{self.email} \n')
+        print('= ENDEREÇO = \n')
         print(f'Estado:{self.endereco.estado} \n')
         print(f'Cidade:{self.endereco.cidade} \n')
         print(f'Endereço: {self.endereco.logradouro} \n')
