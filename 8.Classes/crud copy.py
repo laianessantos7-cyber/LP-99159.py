@@ -15,14 +15,7 @@ lista_cliente = []
 print("===== ABA DO CLIENTE====")
 
 
-print("""
-Código \t
-1 \t Adicionar
-2 \t Atualizar
-3 \t Excluir
 
-
-""")
 
 codigo= input("Digite o código: ")
 
@@ -45,32 +38,25 @@ match codigo:
         indice = lista_cliente.index(nome_para_atualizar)
         lista_cliente[indice] = novo_nome
         print(f'O nome {nome_para_atualizar} foi atualizado para {novo_nome}')
-        else:
-            print(f'O nome {nome_para_atualizar} não foi encontrado')
-             print(lista_cliente)  
-           
+        print(f'O nome {nome_para_atualizar} não foi encontrado')
+        print(lista_cliente)  
            
     case "3":
 
-        print("Excluir: ")
-   
+       # DELETE
+        print('\n Delete - Remover')
+        nome_para_excluir=input('Informe qual nome deseja excluir: ')
+        if nome_para_excluir in lista_cliente:
+            lista_cliente.remove(nome_para_excluir)
+
+        print(f'O nome {nome_para_excluir} não foi encontrado.')
+        print(lista_cliente)
     case _: 
-        print("Ação indisponível! ")
-    
+            print("Ação indisponível! ")
+        
 
 
 
 
 
 
-# DELETE
-print('\n Delete - Remover')
-nome_para_excluir=input('Informe qual nome deseja excluir: ')
-
-if nome_para_excluir in lista_cliente:
-    lista_cliente.remove(nome_para_excluir)
-    print(f'{nome_para_excluir} foi excluido com sucesso! ')
-else:
-    print(f'O nome {nome_para_excluir} não foi encontrado.')
-
-print(lista_cliente)
