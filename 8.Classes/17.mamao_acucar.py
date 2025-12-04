@@ -19,7 +19,8 @@ class Cliente:
     nome: str
     email: str
     telefone: str
-   
+    endereco: Endereço   # ← NECESSÁRIO para funcionar
+
 @dataclass
 class Produto:
     nome: str
@@ -29,32 +30,26 @@ class Produto:
     
 
     def mostrar_dados(self):
-        print('====== CLIENTE ======')
-        print(f'\n Nome: {self.nome}')
-        print(f'E-mail: {self.email}')
-        print(f'Telefone: {self.telefone}')
-        print('====== ENDEREÇO ======')
-        print(f'Logradouro: {self.endereco.logradouro}')
-        print(f'Número: {self.endereco.numero}')
-        print(f'Cidade: {self.endereco.cidade}')
-        print(f'Estado: {self.endereco.estado}')
         print('====== PRODUTO ======')
         print(f'Nome: {self.nome}')
-        print(f'Número: {self.quantidade}')
-        print(f'Cidade: {self.lote}')
-        print(f'Estado: {self.validade}')
+        print(f'Quantidade: {self.quantidade}')
+        print(f'Lote: {self.lote}')
+        print(f'Validade: {self.validade}')
 
-def lista_vazia(lista_cliente):
+
+# Função lista vazia — precisei renomear senão sobrescreve
+def lista_vazia_clientes(lista_cliente):
     if not lista_cliente:
         print('\nNão há clientes cadastrados')
         return True
     return False
 
-def lista_vazia(lista_produto):
+def lista_vazia_produtos(lista_produto):
     if not lista_produto:
         print('\nNão há produtos cadastrados')
         return True
     return False
+
 
 def adicionar_cliente(lista_cliente):
     print('\n--------- Adicionar novo Cliente ---------')
@@ -78,6 +73,7 @@ def adicionar_cliente(lista_cliente):
     lista_cliente.append(novo_cliente)
     print(f'\nCliente {nome} adicionado com sucesso!')
 
+
 def adicionar_produto(lista_produto):
     print('\n--------- Adicionar novo Produto ---------')
     nome=input('Nome: ')
@@ -95,11 +91,13 @@ def adicionar_produto(lista_produto):
     lista_produto.append(novo_produto)
     print(f'\nProduto {nome} adicionado com sucesso!')
 
+
 def encontrar_por_nome_cliente(lista_cliente, nome_buscar):
     for cliente in lista_cliente:
         if cliente.nome.lower() == nome_buscar.lower():
             return cliente
     return None
+
 
 def encontrar_produto_lote(lista_produto, lote_buscar):
     for produto in lista_produto:
@@ -107,23 +105,35 @@ def encontrar_produto_lote(lista_produto, lote_buscar):
             return produto
     return None
 
+
 def mostrar_todos_clientes(lista_cliente):
-    if lista_vazia(lista_cliente):
+    if lista_vazia_clientes(lista_cliente):
         return
+
     print('\n---- Lista de Clientes -----')
     for cliente in lista_cliente:
-     cliente.mostrar_dados()
+        print("\n===== CLIENTE =====")
+        print(f"Nome: {cliente.nome}")
+        print(f"E-mail: {cliente.email}")
+        print(f"Telefone: {cliente.telefone}")
+        print("===== ENDEREÇO =====")
+        print(f"Logradouro: {cliente.endereco.logradouro}")
+        print(f"Número: {cliente.endereco.numero}")
+        print(f"Cidade: {cliente.endereco.cidade}")
+        print(f"Estado: {cliente.endereco.estado}")
+
 
 def mostrar_todos_produtos(lista_produto):
-    if lista_vazia(lista_produto):
+    if lista_vazia_produtos(lista_produto):
         return
+
     print('\n---- Lista de Produtos -----')
     for produto in lista_produto:
-     produto.mostrar_dados()
+        produto.mostrar_dados()
 
 
 def atualizar_clientes(lista_cliente):
-    if lista_vazia(lista_cliente):
+    if lista_vazia_clientes(lista_cliente):
         return
     mostrar_todos_clientes(lista_cliente)
     
@@ -135,7 +145,7 @@ def atualizar_clientes(lista_cliente):
         print('\nCliente encontrado. Deixe em branco para manter o valor atual!\n')
 
         print(f'Nome: {cliente.nome}')
-        novo_nome=input('Nome Atualizado.')
+        novo_nome=input('Nome Atualizado: ')
          
         print(f'E-mail: {cliente.email}')
         novo_email=input('E-mail Atualizado: ')
@@ -143,25 +153,41 @@ def atualizar_clientes(lista_cliente):
         print(f'Telefone: {cliente.telefone}')
         novo_telefone=input('Telefone Atualizado: ')
 
-        print(f'Endereço: {cliente.endereco}')
-        novo_endereco=input('Endereço Atualizado: ')
+        print(f'Logradouro: {cliente.endereco.logradouro}')
+        novo_logradouro=input('Logradouro Atualizado: ')
+
+        print(f'Número: {cliente.endereco.numero}')
+        novo_numero=input('Número Atualizado: ')
+
+        print(f'Cidade: {cliente.endereco.cidade}')
+        nova_cidade=input('Cidade Atualizada: ')
+
+        print(f'Estadotual: {cliente.endereco.estado}')
+        novo_estado=input('Estado Atualizado: ')
 
         if novo_nome:
              cliente.nome=novo_nome
         if novo_email:
             cliente.email=novo_email
         if novo_telefone:
-                cliente.telefone=novo_telefone
-        if novo_endereco:
-                cliente.endereco=novo_endereco
+            cliente.telefone=novo_telefone
+        if novo_logradouro:
+            cliente.endereco.logradouro=novo_logradouro
+        if novo_numero:
+            cliente.endereco.numero=novo_numero
+        if nova_cidade:
+            cliente.endereco.cidade=nova_cidade
+        if novo_estado:
+            cliente.endereco.estado=novo_estado
         
         print('\nDados atualizados com sucesso!')
 
     else:
         print(f'\nNome {nome_buscar} não encontrado!')
 
+
 def atualizar_produto(lista_produto):
-    if lista_vazia(lista_produto):
+    if lista_vazia_produtos(lista_produto):
         return
     mostrar_todos_produtos(lista_produto)
     
@@ -173,7 +199,7 @@ def atualizar_produto(lista_produto):
         print('\nProduto encontrado. Deixe em branco para manter o valor atual!\n')
 
         print(f'Nome: {produto.nome}')
-        novo_nome_produto=input('Nome Atualizado.')
+        novo_nome_produto=input('Nome Atualizado: ')
          
         print(f'Quantidade: {produto.quantidade}')
         nova_quantidade=input('Quantidade Atualizada: ')
@@ -188,42 +214,51 @@ def atualizar_produto(lista_produto):
              produto.nome=novo_nome_produto
         if nova_quantidade:
             produto.quantidade=nova_quantidade
+        if novo_lote:
+            produto.lote=novo_lote
         if nova_validade:
-                produto.validade=nova_validade
+            produto.validade=nova_validade
         
         print('\nDados atualizados com sucesso!')
 
     else:
         print(f'\nLote {lote_buscar} não encontrado!')
 
+
 def excluir_cliente(lista_cliente):
-    if lista_vazia(lista_cliente):
+    if lista_vazia_clientes(lista_cliente):
         return
     mostrar_todos_clientes(lista_cliente)
-    nome_buscar=input('\nDigite o Nome Completo do Cliente que deseja excluir.')
-    cliente=nome_buscar(lista_cliente,nome_buscar)
+
+    nome_buscar=input('\nDigite o Nome Completo do Cliente que deseja excluir: ')
+    cliente=encontrar_por_nome_cliente(lista_cliente,nome_buscar)
+
     if cliente:
         lista_cliente.remove(cliente)
-        print(f'\nCliente{cliente.nome} excluido com sucesso!')
+        print(f'\nCliente {cliente.nome} excluído com sucesso!')
+    else:
+        print('\nCliente não encontrado.')
+
 
 def excluir_produto(lista_produto):
-    if lista_vazia(lista_produto):
+    if lista_vazia_produtos(lista_produto):
         return
     mostrar_todos_produtos(lista_produto)
-    lote_buscar=input('\nDigite o lote do produto que deseja excluir')
-    produto=lote_buscar(lista_produto,lote_buscar)
+
+    lote_buscar=input('\nDigite o lote do produto que deseja excluir: ')
+    produto=encontrar_produto_lote(lista_produto,lote_buscar)
+
     if produto:
         lista_produto.remove(produto)
-        print(f'\nProduto{produto.lote} excluido com sucesso!')
-
-
-
+        print(f'\nProduto {produto.nome} excluído com sucesso!')
+    else:
+        print('\nProduto não encontrado.')
 
 
 while True:
     print("""
           
-         Empresa Mamão com Acúçar
+         Empresa Mamão com Açúcar
 ------------ Área do Cliente ------------
     1- Adicionar Cliente
     2- Adicionar Produto
@@ -231,8 +266,8 @@ while True:
     4- Mostrar todos os produtos
     5- Atualizar Cliente
     6- Atualizar Produto
-    7- Excluir Produto
-    8- Excluir Cliente   
+    7- Excluir Cliente
+    8- Excluir Produto   
     0- Sair
 """)
     try:
